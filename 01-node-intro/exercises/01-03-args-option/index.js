@@ -1,8 +1,13 @@
 import fs from "fs";
 
 const filePath = "data.txt";
-const input = process.argv[2];
 
-fs.appendFileSync(filePath, input + "\n");
+const option = process.argv[2];
+const input = process.argv[3];
 
-console.log(input, "was written in", filePath);
+if (option === "w") {
+  fs.appendFileSync(filePath, input + "\n");
+  console.log(input, "was written in", filePath);
+} else {
+  console.log("invalid option");
+}
