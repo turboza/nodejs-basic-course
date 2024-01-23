@@ -1,6 +1,8 @@
 import express from "express";
 import { isValidName } from "./utils.js";
 import loggingMiddleware from "./middlewares/loggingMiddleware.js";
+import morgan from "morgan";
+import helmet from "helmet";
 
 const app = express();
 const port = 8000;
@@ -8,7 +10,10 @@ const port = 8000;
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(express.static("public"));
-app.use(loggingMiddleware);
+// app.use(loggingMiddleware);
+
+app.use(morgan("dev"));
+app.use(helmet());
 
 // user database variable here:
 const userDatabase = {
