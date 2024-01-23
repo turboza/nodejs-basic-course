@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/todos", (req, res) => {
   const query = req.query;
+  console.log(req.query);
   const filters = Object.entries(query).map(([key, value]) => {
     switch (key) {
       // compare todo.id with the object's value based on the key

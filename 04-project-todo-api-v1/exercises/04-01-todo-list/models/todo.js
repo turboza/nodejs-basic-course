@@ -1,5 +1,5 @@
 const todoDatabase = [
-  { id: 1, title: "Buy a book" },
+  { id: 1, title: "Buy a pen" },
   { id: 2, title: "Go to school" },
   { id: 3, title: "Dinner with the friends" },
   { id: 4, title: "Cook breakfast" },
@@ -7,7 +7,7 @@ const todoDatabase = [
 
 export const listTodos = () => {
   // 1. Implement logic here to list all todos
-  throw new Error("Not implemented");
+  return todoDatabase;
 };
 
 export const findTodo = (todoId) => {
